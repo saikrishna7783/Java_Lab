@@ -1,6 +1,8 @@
 import java.util.Scanner;
+
 abstract class shape {
     double a, b;
+
     abstract void printArea();
 }
 
@@ -42,38 +44,39 @@ class circle extends shape {
 class hi {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        int choice;
-        shape sh;
-        rectangle r = new rectangle();
-        triangle t = new triangle();
-        circle c = new circle();
-        System.out.println(
-                "\n\n1) Rectangle\n2) Triangle\n3) Circle\n------------------------------------------\nEnter your choice : ");
-        choice = sc.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("Enter the length and breadth : ");
-                double l = sc.nextDouble();
-                double b = sc.nextDouble();
-                r.getdata(l,b);
-                r.printArea();
-                break;
-            case 2:
-                System.out.println("Enter the base and height : ");
-                double ba = sc.nextDouble();
-                double h = sc.nextDouble();
-                t.getdata(ba,h);
-                t.printArea();
-                break;
-            case 3:
-                System.out.println("Enter the radius : ");
-                double r1 = sc.nextDouble();
-                c.getdata(r1);
-                c.printArea();
-                break;
-            default:
-                System.out.println("Invalid choice!");
-                break;
+        while (true) {
+            int choice;
+            shape sh;
+            rectangle r = new rectangle();
+            triangle t = new triangle();
+            circle c = new circle();
+            System.out.print(
+                    "\n\n1) Rectangle\n2) Triangle\n3) Circle\n------------------------------------------\nEnter your choice : ");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter the length and breadth : ");
+                    double l = sc.nextDouble();
+                    double b = sc.nextDouble();
+                    r.getdata(l, b);
+                    r.printArea();
+                    break;
+                case 2:
+                    System.out.print("Enter the base and height : ");
+                    double ba = sc.nextDouble();
+                    double h = sc.nextDouble();
+                    t.getdata(ba, h);
+                    t.printArea();
+                    break;
+                case 3:
+                    System.out.print("Enter the radius : ");
+                    double r1 = sc.nextDouble();
+                    c.getdata(r1);
+                    c.printArea();
+                    break;
+                default:
+                    System.exit(0);
+            }
         }
     }
 }

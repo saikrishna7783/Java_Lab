@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 abstract class shape {
     double a, b;
-
     abstract void printArea();
 }
 
@@ -46,12 +45,11 @@ class hi {
         Scanner sc = new Scanner(System.in);
         while (true) {
             int choice;
-            shape sh;
             rectangle r = new rectangle();
             triangle t = new triangle();
             circle c = new circle();
             System.out.print(
-                    "\n\n1) Rectangle\n2) Triangle\n3) Circle\n------------------------------------------\nEnter your choice : ");
+                    "\n\nSelect the shape :-\n------------------------------------------\n1) Rectangle\n2) Triangle\n3) Circle\n------------------------------------------\nEnter your choice : ");
             choice = sc.nextInt();
             switch (choice) {
                 case 1:

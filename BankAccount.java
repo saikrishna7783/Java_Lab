@@ -27,7 +27,11 @@ class SavAcct extends Account {
     }
 
     void withdrawal(int amount) {
-        balance -= amount;
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            System.out.println("You dont have the sufficient balance");
+        }
     }
 }
 
@@ -35,10 +39,15 @@ class CurrAcct extends Account {
     int minBalance = 1000, penalty = 7;
 
     void withdrawal(int amount) {
-        balance -= amount;
         if (balance < minBalance) {
             balance -= penalty;
             System.out.println("A penalty of 7 rupees has been imposed!");
+        }
+
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            System.out.println("You dont have the sufficient balance");
         }
     }
 }

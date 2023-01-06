@@ -9,7 +9,7 @@ class Main {
             int num1 = Integer.parseInt(sc.next());
             System.out.print("Enter the Divisor : ");
             int num2 = Integer.parseInt(sc.next());
-            double result = num1 / num2;
+            double result = (double) num1 / num2;
             System.out.println("The quotient is : " + result);
         } catch (NumberFormatException e) {
             System.out.print("Enter a valid integer value!\n" + e + "\n");
